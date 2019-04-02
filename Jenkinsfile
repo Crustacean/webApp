@@ -25,14 +25,9 @@ node{
 // Kill Agent
 // Input Step
 timeout(time: 15, unit: "SECONDS") {
-    env.APPROVE_PROD = input message: 'Do you want to approve the deploy in production?', ok: 'Yes'
+    input message: 'Do you want to approve the deploy in production?', ok: 'Yes'
 	
-		parameters: [choice(name: 'APPROVE_PROD', choices: 'YES\nNO', description: 'Deploy from STAGING to PRODUCTION?')]
-	if (env.APPROVE_PROD == 'YES'){
-		env.DPROD = true
-	} else {
-		env.DPROD = false
-	}
+	milestone 2
 }
 
 node{
