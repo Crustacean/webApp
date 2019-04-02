@@ -25,9 +25,7 @@ node{
 // Kill Agent
 // Input Step
 timeout(time: 15, unit: "SECONDS") {
-    input message: 'Do you want to approve the deploy in production?', ok: 'Yes'
-	
-	milestone 2
+    input message: 'Do you want to approve the deploy in production?'
 }
 
 node{
