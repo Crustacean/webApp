@@ -30,6 +30,6 @@ node{
 
 node{
 	stage('Run Container on Dev Env'){
-	bat "docker run --rm -p -it 9180:8080 em22435/testdeploy:1.0.${BUILD_NUMBER}"
+	bat "docker run --rm -p 9180:8080 em22435/testdeploy:1.0.${BUILD_NUMBER}"
 	}
 }
