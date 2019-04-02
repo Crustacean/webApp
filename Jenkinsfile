@@ -20,13 +20,6 @@ node{
 	}
 	bat "docker push em22435/testdeploy:1.0.${BUILD_NUMBER}"
 	}
-	post{
-		always{echo "This will always run" }
-		success{echo "Build was successful" }
-		failure{echo "Build has failed" }
-		unstable{ echo "Build is unstable" }
-		changed{echo "State of the build has changed"}
-	}
 }
 
 // Kill Agent
