@@ -20,6 +20,9 @@ node{
 	}
 	bat "docker push em22435/testdeploy:1.0.${BUILD_NUMBER}"
 	}
+	stage('Run Container on Dev Env'){
+	bat "docker run --rm -p 9180:8080 em22435/testdeploy:1.0.${BUILD_NUMBER}"
+	}
 }
 
 // Kill Agent
@@ -28,8 +31,8 @@ node{
     //input message: 'Do you want to approve the deploy in production?'
 //}
 
-node{
-	stage('Run Container on Dev Env'){
-	bat "docker run --rm -p 9180:8080 em22435/testdeploy:1.0.${BUILD_NUMBER}"
-	}
-}
+//node{
+	//stage('Run Container on Dev Env'){
+	//bat "docker run --rm -p 9180:8080 em22435/testdeploy:1.0.${BUILD_NUMBER}"
+	//}
+//}
